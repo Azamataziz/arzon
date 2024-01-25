@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "338812213677",
+    "project_id": "arzon-4f9d3",
+    "storage_bucket": "arzon-4f9d3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:338812213677:android:497967ddb9013f1b29e924",
+        "android_client_info": {
+          "package_name": "com.example.arzon_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9N9V7D5dbn5tiYHspzTq-ZHhIr9lcsfI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
