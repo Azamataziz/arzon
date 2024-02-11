@@ -1,4 +1,5 @@
-import '../../../core/models/item_model.dart';
+
+import 'package:Arzon/core/repositories/models/item_repo_model.dart';
 import 'package:flutter/material.dart';
 
 class ItemColumn extends StatelessWidget {
@@ -15,7 +16,7 @@ class ItemColumn extends StatelessWidget {
               margin: const EdgeInsets.symmetric(vertical: 5),
               height: 155,
               width: double.infinity,
-              child: Image.asset(item.image),
+              child: Image.network(item.image),
             ),
             Positioned(
               top: 4,
@@ -24,7 +25,7 @@ class ItemColumn extends StatelessWidget {
                 width: 32,
                 height: 32,
                 child: Image(
-                  image: AssetImage('assets/small/${item.brand}.png'),
+                  image: AssetImage('assets/small/korzinka.png'),
                   fit: BoxFit.contain,
                 ),
               ),
@@ -36,7 +37,7 @@ class ItemColumn extends StatelessWidget {
                 backgroundColor: Colors.red,
                 radius: 15,
                 child: Text(
-                  item.sale,
+                  item.category,
                   textAlign: TextAlign.center,
                   style: const TextStyle(
                       color: Colors.white,
@@ -51,7 +52,7 @@ class ItemColumn extends StatelessWidget {
             child: Column(
               children: [
                 Text(
-                  item.title,
+                  item.name,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.center,
@@ -61,7 +62,7 @@ class ItemColumn extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  item.count,
+                  item.price,
                   textAlign: TextAlign.center,
                   style: const TextStyle(
                     fontSize: 8,
@@ -74,7 +75,7 @@ class ItemColumn extends StatelessWidget {
                         child: Container(
                           padding: EdgeInsets.only(right: 4),
                           child: Text(
-                            item.firstPrice,
+                            item.price,
                             textAlign: TextAlign.end,
                             style: const TextStyle(
                                 fontSize: 12,
@@ -87,7 +88,7 @@ class ItemColumn extends StatelessWidget {
                         child: Container(
                           padding: EdgeInsets.only(left: 4),
                           child: Text(
-                            item.secondPrice,
+                            item.price,
                             textAlign: TextAlign.start,
                             style: const TextStyle(
                                 fontSize: 15,

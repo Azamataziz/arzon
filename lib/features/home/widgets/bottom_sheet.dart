@@ -1,4 +1,4 @@
-import '../../../core/models/item_model.dart';
+import 'package:Arzon/core/repositories/models/item_repo_model.dart';
 import 'package:flutter/material.dart';
 
 class BottomSheeet extends StatelessWidget {
@@ -12,34 +12,34 @@ class BottomSheeet extends StatelessWidget {
         flex: 3,
         child: Stack(children: [
           Center(
-            child: Image(
-              image: AssetImage(item.image),
+            child: Container(
+              child: Image.network(item.image),
               height: 200,
             ),
           ),
-          if (item.brand == 'havas')
-            Positioned(
-                top: 16,
-                child: SizedBox(
-                  width: 128,
-                  height: 64,
-                  child: Image.asset(
-                    'assets/big/${item.brand}.png',
-                    fit: BoxFit.contain,
-                  ),
-                )),
-          if (item.brand != 'havas')
-            Positioned(
-              left: 16,
-              child: SizedBox(
-                width: 128,
-                height: 64,
-                child: Image.asset(
-                  'assets/big/${item.brand}.png',
-                  fit: BoxFit.contain,
-                ),
-              ),
-            ),
+          // if (item.brand == 'havas')
+          //   Positioned(
+          //       top: 16,
+          //       child: SizedBox(
+          //         width: 128,
+          //         height: 64,
+          //         child: Image.asset(
+          //           'assets/big/korzinka.png',
+          //           fit: BoxFit.contain,
+          //         ),
+          //       )),
+          // if (item.brand != 'havas')
+          //   Positioned(
+          //     left: 16,
+          //     child: SizedBox(
+          //       width: 128,
+          //       height: 64,
+          //       child: Image.asset(
+          //         'assets/big/${item.brand}.png',
+          //         fit: BoxFit.contain,
+          //       ),
+          //     ),
+          //   ),
           Positioned(
             top: 10,
             right: 16,
@@ -47,7 +47,7 @@ class BottomSheeet extends StatelessWidget {
               backgroundColor: const Color(0xfff94f0c),
               radius: 25,
               child: Text(
-                item.sale,
+                item.price,
                 style: const TextStyle(
                     color: Colors.white,
                     fontSize: 18,
@@ -58,7 +58,7 @@ class BottomSheeet extends StatelessWidget {
           Container(
               alignment: Alignment.bottomCenter,
               child: Text(
-                item.title,
+                item.name,
                 style:
                     const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ))
@@ -70,7 +70,7 @@ class BottomSheeet extends StatelessWidget {
           child: Column(
             children: [
               Text(
-                item.count,
+                item.price,
                 textAlign: TextAlign.center,
               ),
               Container(
@@ -80,7 +80,7 @@ class BottomSheeet extends StatelessWidget {
                   Container(
                     margin: const EdgeInsets.only(right: 8),
                     child: Text(
-                      item.firstPrice,
+                      item.price,
                       style: const TextStyle(
                           decoration: TextDecoration.lineThrough,
                           fontSize: 15,
@@ -91,7 +91,7 @@ class BottomSheeet extends StatelessWidget {
                   Container(
                     margin: const EdgeInsets.only(left: 8),
                     child: Text(
-                      item.secondPrice,
+                      item.price,
                       style: const TextStyle(
                           fontSize: 30,
                           fontWeight: FontWeight.bold,
@@ -118,7 +118,7 @@ class BottomSheeet extends StatelessWidget {
               ),
             ),
             Text(
-              item.endDate,
+              item.price,
               style: const TextStyle(
                 fontSize: 25,
                 fontWeight: FontWeight.bold,

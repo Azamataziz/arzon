@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: Constants.myTitle,
       theme: theme,
-      home: SplashScreen(),
+      home: TabScreen(),
       routes: {
         TabScreen.routeName: (ctx) => TabScreen(),
       },

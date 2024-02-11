@@ -1,18 +1,14 @@
-import 'dart:convert';
-
+import 'package:Arzon/core/repositories/models/item_repo_model.dart';
 import 'package:dio/dio.dart';
 
 class AllItemsRepo {
+  Future<List<ItemModel>> getAllItemsList() async {
+    final response = await Dio().get("https://fakestoreapi.com/products");
+    final List<dynamic> data = response.data;
 
-  final raw = {
-    "get_products": 1019,
-  };
-  Future<void> getAllItemsList() async {
-    final response = await Dio().post(
-      "https://catalog.korzinka.uz/api/mobile/catalogs/category/products",
-      
-      data: jsonEncode(raw),
-    );
-    print(response.toString());
+    List<ItemModel> products = data.map((e) => ItemModel.fromJson(e)).toList();
+
+    print('DATALIST ------> $products');
+    return products;
   }
 }
